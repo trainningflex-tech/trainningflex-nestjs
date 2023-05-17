@@ -1,0 +1,16 @@
+
+
+# Compiled output
+/dist
+/tmp
+
+# Dependecies
+/node_modules
+.npmrc
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
