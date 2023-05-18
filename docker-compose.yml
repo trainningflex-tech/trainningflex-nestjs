@@ -5,11 +5,11 @@ networks:
     driver: bridge
 
 services:
+# setting auth-app api
   api: 
     container_name: auth-app_sevice
     networks:
       - container_net
-    image: trainningflex-nestjs
     env_file:
       - .env
     environment:
@@ -17,10 +17,11 @@ services:
       - POSTGRES_HOST=database
       - POSTGRES_PORT=5432
 
+    build: .
     ports:
       - ${API_PORT_LOCAL}:${API_PORT_CONTAINER}
     volumes:
-      - .:/home/Desktop/trainningflex-nestjs
+      - .:/home/projects/auth-app
     depends_on:
       - database
 # setting database postgres
