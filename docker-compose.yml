@@ -10,7 +10,7 @@ services:
     container_name: auth-app_sevice
     networks:
       - container_net
-    image: minhapi
+    image: trainningflex-nestjs
     env_file:
       - .env
     environment:
