@@ -9,14 +9,13 @@ pipeline {
                 }
             }
         }
-        stage('Test') { 
+        stage('Push Image'){
             steps {
-                echo "Test"
-            }
-        }
-        stage('Deploy') { 
-            steps {
-                echo "Test"
+                script {
+                    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub')
+                    dockerapp.push('latest')
+                    dockerapp.push(BUILD_NUMBER);
+                }
             }
         }
     }
