@@ -14,7 +14,7 @@ pipeline {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub')
                     dockerapp.push('latest')
-                    dockerapp.push(BUILD_NUMBER);
+                    dockerapp.push("BUILD_NUMBER");
                 }
             }
         }
