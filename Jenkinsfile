@@ -22,7 +22,9 @@ pipeline {
                     container('auth-app_sevice'){
                 sh 'docker run -d -p 3000:3000 --name auth-app_sevice trainningflex-api/trainningflex-nestjs:' + BUILD_NUMBER
             }
-            
+                
         }
+    }
+}
     }
 }
