@@ -22,7 +22,7 @@ services:
     ports:
       - ${API_PORT_LOCAL}:${API_PORT_CONTAINER}
     volumes:
-      - .:/home/projects/auth-app
+      - .:/home/Desktop/trainningflex-nestjs
     depends_on:
       - database
 # setting database postgres
