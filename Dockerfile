@@ -4,6 +4,4 @@ WORKDIR /home/projects/auth-app
 
 COPY . .
 
-RUN npm install
-RUN npm install bcrypt
 CMD npm run start
