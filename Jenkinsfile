@@ -1,5 +1,5 @@
 pipeline {
-    agent any 
+    agent 'nestjs' 
 
     stages {
         stage('Build') { 
