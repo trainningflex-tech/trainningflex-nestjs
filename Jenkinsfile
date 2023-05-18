@@ -1,18 +1,12 @@
 pipeline {
-    agent 'nestjs' 
+    agent any
 
     stages {
-        stage('Build') { 
-            agent{
-                docker{
-                    image 'node:18.16.0-alpine'
-                    args ' -p 3000:3000'
-                }
-            }
+        stage('Build Image') { 
             steps {
-                git 'https://github.com/trainningflex-tech/trainningflex-nestjs'
-                sh 'npm install'
-                sh 'npm install bcrypt'
+                script {
+                    dockerapp = docker.build('trainningflex-tech/trainningflex-nestjs', '-f ./Dockerfile ./')
+                }
             }
         }
         stage('Test') { 
